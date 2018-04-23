@@ -1,0 +1,13 @@
+<p>
+  todo List
+</p>
+
+<ul>
+  <li *ngFor="let todo of todos" >
+    {{todo.text}} 
+    <input type="checkbox" (change)="todoItemChange($event,todo)" value={{todo.completed}}  />
+  </li>
+</ul>
+
+<input type="text" #newTodo /> 
+<input type="button" value="Add Todo" (click)="addTodo(newTodo.value)" />
